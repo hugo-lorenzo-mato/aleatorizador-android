@@ -154,7 +154,6 @@ public class MainActivity extends AppCompatActivity {
 
             return myView;
         }
-        //Just a coment to test git and AS2.2
 
     }
 
