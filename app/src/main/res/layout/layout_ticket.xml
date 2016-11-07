@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bglist"
+    android:padding="3pt"
+    android:clickable="false">
+
+    <ImageButton
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        app:srcCompat="@android:drawable/ic_menu_delete"
+        android:id="@+id/imageButtonDelete"
+        android:layout_gravity="center"
+        android:layout_weight="0"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/bglist" />
+
+
+    <ImageButton
+        android:layout_width="28dp"
+        android:layout_height="26dp"
+        app:srcCompat="@android:drawable/ic_menu_edit"
+        android:background="#fff"
+        android:layout_gravity="center"
+        android:id="@+id/imageButtonEdit"
+        android:layout_weight="0"
+        android:onClick="EditCategory"
+        style="@android:style/Widget.Material.Light.ImageButton" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvlayoutcategory"
+        android:scrollbarTrackHorizontal="@android:color/holo_green_light"
+        android:scrollbarStyle="insideInset"
+        android:scrollbarSize="15dp"
+        android:fadeScrollbars="true"
+        android:layout_marginTop="13dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginRight="50dp"
+        android:layout_weight="1"
+        android:layout_gravity="center_vertical"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Widget.ActionMode.Title"
+        android:textAlignment="center" />
+
+</LinearLayout>

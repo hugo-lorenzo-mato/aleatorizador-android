@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4ccbcda5c72027c7f7c14be9ff8640d9cb0d8da0">
+        <dex dex="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.0.0_7b4be70e616ff86ed195b88ae930bc762696a026/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="76fb65a4b41ea42dab8a1310ed772a2420c96b52">
+        <dex dex="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.0.0_a707cdd5867718eacb80bc546409a6628c5dd125/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8bc45ce1f63d1a391fd38b32a201be5a42f9c95d">
+        <dex dex="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.0.0_610006d877f4cc43878094da300632097540e3ab/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/hugo/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.0.0/support-annotations-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a22d2cc94da87b254451fa8ed28afc30b4653773">
+        <dex dex="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.0.0_a049bf81f105fdcf7c7817c817fd1201a9ec194c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/exploded-aar/com.android.support/design/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="26384be22ddc74cfe197ebda9edbc7d1fd8bd537">
+        <dex dex="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-25.0.0_83fb5d9aae4e6eddc72af2a8ea03e4f9cd5fb294/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
+        <dex dex="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.0.0_478ef3eb00e06a3c7906fb94578cf207bfb5c372/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.0.0_a65a3330b0a2a31a84100ce7e6845ad6630a27e5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="26674000177e45447a0326a6ad84612761199a13">
+        <dex dex="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.0.0_41c180926f0d6c25fcdba1b640f1fed32037aba3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_62b7cc8c1ef74db265a211847191ee6d78343ce7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ab33e7e0f8c1c3f38fd0bdd37d2390f81820eee0">
+        <dex dex="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_e36f5f387e31080362f43a74d20ad54b0fee5c7a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ee5faf4dee5b6a4364bf51587871047dde7c703a">
+        <dex dex="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_e49e21c9e57dba090a5f3eb7bd35c9286640b690/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5e497d60f0cb6ce87c458ac5420a46d0fed49bd0">
+        <dex dex="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.0.0_6aa8bd500655486a0c4a46575dd5438e898f202d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="665d21a8a069c96b4d9e8b434f5096d865b4e261">
+        <dex dex="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_224a7e5c968a0be9dc3c5c42a2c6c79c8615c29b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5b775d590c11241b21049f9bcce955cf596634ca">
+        <dex dex="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_b2184c027006fdccc73b75853c4bb34bc740c7dd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
+        <dex dex="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.0.0_077e676f555ff453c990cc3be07d3800740e4dd9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d29714cc76b38157e3cbd034c66e1ec808eb4c19">
+        <dex dex="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.0.0_3feab570b43e19ad121512b919ac91f569218dc7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/exploded-aar/com.android.support/transition/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0c6d948e6cb9ea6f535d175fb61ba2930719c0e9">
+        <dex dex="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.0.0_a2fb595675d184501fe23047e1f50880d47a3137/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3b61a70884adaf0be3fc06c70c801e3e6df13133">
+        <dex dex="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_882e35db2f46a99e5e3fd00d771b89a2fcb76ca3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f2e3b9bc1ec25f652e8007ce7774c991e38f6a00">
+        <dex dex="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_f12950041f715232e6e50a3b993d22ca6c24a5bf/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="75b1f366ff0bbc78f8b1f7cf0dc82e7c53afef6a">
+        <dex dex="/home/hugo/AndroidStudioProjects/AleatorizadorAPP/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.0.0_6a1cf83864ba97de23fd2d2cc9c0ab2906997e50/classes.dex" />
+    </item>
+
+</items>
