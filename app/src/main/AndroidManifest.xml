@@ -18,6 +18,8 @@
         <activity android:name=".Activity_Add" />
         <activity android:name=".AddCategory" />
         <activity android:name=".EditCategory" />
+        <activity android:name=".Subcategories" />
+        <activity android:name=".AddSubcategory"></activity>
     </application>
 
 </manifest>

@@ -17,13 +17,23 @@ public class DataBaseManager {
     // Static por si tenemos más versiones
     static final String DBName = "RandomDecisions";
     static final String TableName = "Categories";
-    static final String ColIdCategories = "Id";
+    static final String ColIdCategories = "id";
     static final String ColNameCategories = "Category";
     static final int DBVersion = 1;
     //Create table
     static final String CreateTable = "CREATE TABLE IF NOT EXISTS " + TableName
             + "(" + ColIdCategories + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + ColNameCategories + " TEXT NOT NULL);";
+
+    // Creamos una nueva tabla para las subcategorías
+
+    static final String TableNameSub = "Subcategories";
+    static final String ColParentSubCategories = "ParentCategory";
+    static final String ColNameSubCategories = "SubCategory";
+
+    static final String CreateTableSub = "CREATE TABLE IF NOT EXISTS " + TableNameSub
+            + "(" + ColNameSubCategories + " TEXT NOT NULL,"
+            + ColParentSubCategories + " TEXT NOT NULL);";
 
     // static porque necesito una única versión de esta clase para todas las instancias
     static class DBhelper extends SQLiteOpenHelper{
@@ -40,6 +50,7 @@ public class DataBaseManager {
         public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
             sqLiteDatabase.execSQL(CreateTable);
+            sqLiteDatabase.execSQL(CreateTableSub);
             Toast.makeText(context, "DB created", Toast.LENGTH_LONG).show();
 
         }
@@ -48,6 +59,8 @@ public class DataBaseManager {
         public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
             sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TableName);
+            sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TableNameSub);
+
             onCreate(sqLiteDatabase);
 
         }
@@ -66,11 +79,27 @@ public class DataBaseManager {
         return id;
     }
 
+    public long InsertSub(ContentValues values){
+        long id;
+        id = sqlDB.insert(TableNameSub,"",values);
+        // 0 si falla
+        return id;
+    }
+
     //select username,Password from Logins where ID=1
     public Cursor Query(String[] Projection, String Selection, String[] SelectionArgs, String SortOrder){
 
         SQLiteQueryBuilder qb= new SQLiteQueryBuilder();
         qb.setTables(TableName);
+
+        Cursor cursor=qb.query(sqlDB,Projection,Selection,SelectionArgs,null,null,SortOrder);
+        return cursor;
+    }
+
+    public Cursor QuerySub(String[] Projection, String Selection, String[] SelectionArgs, String SortOrder){
+
+        SQLiteQueryBuilder qb= new SQLiteQueryBuilder();
+        qb.setTables(TableNameSub);
 
         Cursor cursor=qb.query(sqlDB,Projection,Selection,SelectionArgs,null,null,SortOrder);
         return cursor;
