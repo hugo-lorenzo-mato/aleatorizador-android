@@ -26,7 +26,7 @@ public class AddSubcategory extends AppCompatActivity {
         db = new DataBaseManager(this);
         Bundle b = getIntent().getExtras();
         parentCategory = b.get("parentCategory").toString();
-        Toast.makeText(getApplicationContext(), "La categoría padre es" + parentCategory, Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(), "La categoría padre es" + parentCategory, Toast.LENGTH_LONG).show();
     }
 
 
@@ -36,8 +36,8 @@ public class AddSubcategory extends AppCompatActivity {
         values.put(DataBaseManager.ColNameSubCategories, et_addSub.getText().toString());
         long result = db.InsertSub(values);
         if (result > 0)
-            Toast.makeText(getApplicationContext(), "SubCategory: " + et_addSub.getText().toString() +
-                    ", added; parent: " + parentCategory, Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Option: " + et_addSub.getText().toString() +
+                    ", added in Category: " + parentCategory, Toast.LENGTH_LONG).show();
         else
             Toast.makeText(getApplicationContext(), "Not Added", Toast.LENGTH_LONG).show();
         Intent intentMain = new Intent(this, Subcategories.class);

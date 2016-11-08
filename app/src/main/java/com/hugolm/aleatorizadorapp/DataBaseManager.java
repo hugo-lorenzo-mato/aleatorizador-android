@@ -122,4 +122,9 @@ public class DataBaseManager {
         return result;
     }
 
+    public int UpdateSub(ContentValues values, String Selection, String[] SelectionArgs) {
+        int result = sqlDB.update(TableNameSub, values, Selection, SelectionArgs);
+        return result;
+    }
+
 }

@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,6 +43,12 @@ public class Subcategories extends AppCompatActivity {
 
     }
 
+    public void bu_goHome(View view){
+        Intent intentMain = new Intent(this, MainActivity.class);
+        intentMain.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intentMain);
+    }
+
 
     private void ShowListSub() {
         int i = 0;
@@ -56,7 +63,7 @@ public class Subcategories extends AppCompatActivity {
                 String CompareParent = cursor.getString(cursor.getColumnIndex(db.ColParentSubCategories));
                 //Toast.makeText(getApplicationContext(), parentCategory + CompareParent,Toast.LENGTH_SHORT).show();
                 if (parentCategory.toLowerCase().equals(CompareParent.toLowerCase())) {
-                    Toast.makeText(getApplicationContext(), "IGUALES" + i, Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getApplicationContext(), "IGUALES" + i, Toast.LENGTH_SHORT).show();
                     listData.add(new AdapterItems(cursor.getString(cursor.getColumnIndex(db.ColNameSubCategories))));
                     i++;
                 }
@@ -117,9 +124,8 @@ public class Subcategories extends AppCompatActivity {
             ibDelete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
-                    AlertDialog alertDialog = new AlertDialog.Builder(getApplicationContext()).create();
-                    alertDialog.setTitle("Deleting Category " + s.Category);
+                    AlertDialog alertDialog = new AlertDialog.Builder(new ContextThemeWrapper(Subcategories.this, R.style.myDialog)).create();
+                    alertDialog.setTitle("Deleting Subcategory " + s.Category);
                     alertDialog.setMessage("Are you sure you want to delete it?");
                     alertDialog.setIcon(android.R.drawable.ic_dialog_alert);
                     alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Dismiss", new DialogInterface.OnClickListener() {
@@ -141,18 +147,22 @@ public class Subcategories extends AppCompatActivity {
                 }
             });
 
-            /*
-            ImageButton BuUpdate = (ImageButton) myView.findViewById(R.id.imageButtonEdit);
+
+            ImageButton BuUpdate = (ImageButton) myView.findViewById(R.id.imageButtonEditSub);
             BuUpdate.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     //Toast.makeText(getApplicationContext(), "Presionado", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(getApplicationContext(), EditCategory.class);
+                    Intent intent = new Intent(getApplicationContext(), EditSubcategory.class);
                     intent.putExtra("Category", s.Category);
+                    intent.putExtra("parentCategory", parentCategory);
                     startActivity(intent);
                 }
             });
-            */
+
+
+
+
             return myView;
         }
 

@@ -26,6 +26,23 @@ tools:context="com.hugolm.aleatorizadorapp.Subcategories">
     app:rippleColor="?android:attr/colorBackground"
     app:borderWidth="2dp"/>
 
+<android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginLeft="240dp"
+        android:layout_marginTop="440dp"
+        app:srcCompat="?android:attr/homeAsUpIndicator"
+        app:fabSize="mini"
+        app:useCompatPadding="true"
+        app:backgroundTint="@color/colorAccent"
+        android:onClick="bu_goHome"
+        app:elevation="15dp"
+        android:tint="@android:color/background_light"
+        app:rippleColor="?android:attr/colorBackground"
+        app:borderWidth="2dp"/>
+
 
 <LinearLayout
     android:layout_width="match_parent"

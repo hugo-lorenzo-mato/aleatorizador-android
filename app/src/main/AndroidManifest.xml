@@ -15,11 +15,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity_Add" />
         <activity android:name=".AddCategory" />
         <activity android:name=".EditCategory" />
         <activity android:name=".Subcategories" />
-        <activity android:name=".AddSubcategory"></activity>
+        <activity android:name=".AddSubcategory" />
+        <activity android:name=".EditSubcategory"></activity>
     </application>
 
 </manifest>
