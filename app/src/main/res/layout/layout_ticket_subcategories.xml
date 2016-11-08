@@ -14,7 +14,7 @@ tools:context="com.hugolm.aleatorizadorapp.Subcategories">
     android:layout_width="26dp"
     android:layout_height="26dp"
     app:srcCompat="@android:drawable/ic_menu_delete"
-    android:id="@+id/imageButtonDelete"
+    android:id="@+id/imageButtonDeleteSub"
     android:layout_gravity="center"
     android:layout_weight="0"
     android:layout_marginLeft="10dp"
@@ -28,10 +28,9 @@ tools:context="com.hugolm.aleatorizadorapp.Subcategories">
     app:srcCompat="@android:drawable/ic_menu_edit"
     android:background="#fff"
     android:layout_gravity="center"
-    android:id="@+id/imageButtonEdit"
+    android:id="@+id/imageButtonEditSub"
     android:layout_weight="0"
-    android:onClick="EditCategory"
-    style="@android:style/Widget.Material.Light.ImageButton" />
+    android:onClick="EditCategory"/>
 
 <TextView
     android:text="TextView"

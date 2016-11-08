@@ -38,35 +38,33 @@ public class Subcategories extends AppCompatActivity {
         db = new DataBaseManager(this);
         myAdapter = new CustomAdapter(listData);
         myListView.setAdapter(myAdapter);
-        ShowList();
+        ShowListSub();
 
     }
 
 
-    private void ShowList() {
-
+    private void ShowListSub() {
+        int i = 0;
         String[] projectionParent = {"ParentCategory"};
         Cursor cursorParent = db.QuerySub(projectionParent, null, null, db.ColParentSubCategories);
-        String[] projection = {"SubCategory"};
+        String[] projection = {"SubCategory", "ParentCategory"};
         Cursor cursor = db.QuerySub(projection, null, null, db.ColNameSubCategories);
-        //String s = cursor.getString(cursor.getColumnIndex(db.ColNameSubCategories));
-        //Toast.makeText(getApplicationContext(),"Aqui va: " + s, Toast.LENGTH_LONG).show();
         listData.clear();
-        if (cursor.moveToFirst() && cursorParent.moveToFirst()) {
-            //String tableData = "";
+        if (cursor.moveToFirst()) {
             do {
-                //tableData += cursor.getString(cursor.getColumnIndex(db.ColNameCategories)) + "::";
                 //String Compare = cursor.getString(cursor.getColumnIndex(db.ColNameSubCategories));
-                String CompareParent = cursorParent.getString(cursorParent.getColumnIndex(db.ColParentSubCategories));
-                Toast.makeText(getApplicationContext(), parentCategory + CompareParent,Toast.LENGTH_SHORT).show();
-                if (parentCategory.equals(CompareParent))
+                String CompareParent = cursor.getString(cursor.getColumnIndex(db.ColParentSubCategories));
+                //Toast.makeText(getApplicationContext(), parentCategory + CompareParent,Toast.LENGTH_SHORT).show();
+                if (parentCategory.toLowerCase().equals(CompareParent.toLowerCase())) {
+                    Toast.makeText(getApplicationContext(), "IGUALES" + i, Toast.LENGTH_SHORT).show();
                     listData.add(new AdapterItems(cursor.getString(cursor.getColumnIndex(db.ColNameSubCategories))));
-            } while (cursor.moveToNext() && cursorParent.moveToNext());
+                    i++;
+                }
+            } while (cursor.moveToNext());
             //Toast.makeText(getApplicationContext(), "List Reloaded", Toast.LENGTH_LONG).show();
         }
 
         myAdapter = new CustomAdapter(listData);
-
         ListView lvlistSub = (ListView) findViewById(R.id.lvlistSub);
         lvlistSub.setAdapter(myAdapter);
     }
@@ -114,8 +112,8 @@ public class Subcategories extends AppCompatActivity {
             TextView txtCategory = (TextView) myView.findViewById(R.id.tvlayoutcategorySub);
             txtCategory.setText(s.Category);
 
-            /*
-            ImageButton ibDelete = (ImageButton) myView.findViewById(R.id.imageButtonDelete);
+
+            ImageButton ibDelete = (ImageButton) myView.findViewById(R.id.imageButtonDeleteSub);
             ibDelete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -132,10 +130,10 @@ public class Subcategories extends AppCompatActivity {
                     alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Confirm", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             String[] selectionArgs = {s.Category};
-                            int result = db.delete("Category = ?", selectionArgs);
+                            int result = db.deleteSub("SubCategory = ?", selectionArgs);
                             if (result > 0) {
-                                Toast.makeText(getApplicationContext(), "Category: " + s.Category + " deleted", Toast.LENGTH_SHORT).show();
-                                ShowList();
+                                Toast.makeText(getApplicationContext(), "SubCategory: " + s.Category + " deleted", Toast.LENGTH_SHORT).show();
+                                ShowListSub();
                             }
                         }
                     });
@@ -143,7 +141,7 @@ public class Subcategories extends AppCompatActivity {
                 }
             });
 
-
+            /*
             ImageButton BuUpdate = (ImageButton) myView.findViewById(R.id.imageButtonEdit);
             BuUpdate.setOnClickListener(new View.OnClickListener() {
                 @Override

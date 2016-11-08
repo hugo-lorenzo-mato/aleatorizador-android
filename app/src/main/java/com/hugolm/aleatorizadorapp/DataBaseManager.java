@@ -36,11 +36,11 @@ public class DataBaseManager {
             + ColParentSubCategories + " TEXT NOT NULL);";
 
     // static porque necesito una única versión de esta clase para todas las instancias
-    static class DBhelper extends SQLiteOpenHelper{
+    static class DBhelper extends SQLiteOpenHelper {
 
         Context context;
 
-        DBhelper(Context context){
+        DBhelper(Context context) {
             //Si la Base de datos no está disponible, crea una
             super(context, DBName, null, DBVersion);
             this.context = context;
@@ -72,46 +72,53 @@ public class DataBaseManager {
         sqlDB = db.getWritableDatabase();
     }
 
-    public long Insert(ContentValues values){
+    public long Insert(ContentValues values) {
         long id;
-        id = sqlDB.insert(TableName,"",values);
+        id = sqlDB.insert(TableName, "", values);
         // 0 si falla
         return id;
     }
 
-    public long InsertSub(ContentValues values){
+    public long InsertSub(ContentValues values) {
         long id;
-        id = sqlDB.insert(TableNameSub,"",values);
+        id = sqlDB.insert(TableNameSub, "", values);
         // 0 si falla
         return id;
     }
 
     //select username,Password from Logins where ID=1
-    public Cursor Query(String[] Projection, String Selection, String[] SelectionArgs, String SortOrder){
+    public Cursor Query(String[] Projection, String Selection, String[] SelectionArgs, String SortOrder) {
 
-        SQLiteQueryBuilder qb= new SQLiteQueryBuilder();
+        SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
         qb.setTables(TableName);
 
-        Cursor cursor=qb.query(sqlDB,Projection,Selection,SelectionArgs,null,null,SortOrder);
+        Cursor cursor = qb.query(sqlDB, Projection, Selection, SelectionArgs, null, null, SortOrder);
         return cursor;
     }
 
-    public Cursor QuerySub(String[] Projection, String Selection, String[] SelectionArgs, String SortOrder){
+    public Cursor QuerySub(String[] Projection, String Selection, String[] SelectionArgs, String SortOrder) {
 
-        SQLiteQueryBuilder qb= new SQLiteQueryBuilder();
+        SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
         qb.setTables(TableNameSub);
 
-        Cursor cursor=qb.query(sqlDB,Projection,Selection,SelectionArgs,null,null,SortOrder);
+        Cursor cursor = qb.query(sqlDB, Projection, Selection, SelectionArgs, null, null, SortOrder);
         return cursor;
     }
 
-    public int delete(String Selection, String[] SelectionArgs){
+    public int delete(String Selection, String[] SelectionArgs) {
+        sqlDB.delete(TableNameSub, "ParentCategory = ?", SelectionArgs);
         int result = sqlDB.delete(TableName, Selection, SelectionArgs);
         return result;
     }
 
-    public int Update(ContentValues values, String Selection, String[] SelectionArgs){
-        int result =  sqlDB.update(TableName, values, Selection, SelectionArgs);
+    public int deleteSub(String Selection, String[] SelectionArgs) {
+        int result = sqlDB.delete(TableNameSub, Selection, SelectionArgs);
+        return result;
+    }
+
+
+    public int Update(ContentValues values, String Selection, String[] SelectionArgs) {
+        int result = sqlDB.update(TableName, values, Selection, SelectionArgs);
         return result;
     }
 

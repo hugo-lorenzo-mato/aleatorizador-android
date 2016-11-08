@@ -41,6 +41,7 @@ public class AddSubcategory extends AppCompatActivity {
         else
             Toast.makeText(getApplicationContext(), "Not Added", Toast.LENGTH_LONG).show();
         Intent intentMain = new Intent(this, Subcategories.class);
+        //Toast.makeText(getApplicationContext(), "La categoría que mandamos otra vez para hacer el show es: " + parentCategory, Toast.LENGTH_SHORT).show();
         intentMain.putExtra("Category", parentCategory);
         startActivity(intentMain);
 
