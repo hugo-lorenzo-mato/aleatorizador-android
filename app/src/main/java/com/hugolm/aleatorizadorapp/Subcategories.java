@@ -32,14 +32,27 @@ import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Subcategories extends AppCompatActivity {
+public class Subcategories extends AppCompatActivity implements SensorEventListener {
 
     String parentCategory;
     ArrayList<AdapterItems> listData = new ArrayList<AdapterItems>();
     CustomAdapter myAdapter;
     DataBaseManager db;
     Bundle b;
-
+    // Necesario para Acelerómetro
+    Sensor sensor;
+    SensorManager sensorManager;
+    float xOld = 0;
+    float yOld = 0;
+    float zOld = 0;
+    //speed debe ser mayor a 80
+    float threaShold = 600;
+    long oldTime = 0;
+    // Para imprimir el random de la lista
+    AdapterItems adapterOption;
+    // Para proximidad
+    private SensorManager sensorManagerProximity;
+    private Sensor sensorProximity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,8 +65,101 @@ public class Subcategories extends AppCompatActivity {
         myAdapter = new CustomAdapter(listData);
         myListView.setAdapter(myAdapter);
         ShowListSub();
+        sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        sensor = sensorManager.getDefaultSensor(sensor.TYPE_ACCELEROMETER);
+        sensorManagerProximity = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        sensorProximity = sensorManagerProximity.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        //Si no está disponible en el dispositivo el sacelerómetro
+        if (sensor != null)
+            sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_NORMAL);
+            //Si no está disponible en el dispositivo el sensor de próximidad
+        else if (sensorProximity != null)
+            sensorManagerProximity.registerListener(this, sensorProximity, SensorManager.SENSOR_DELAY_NORMAL);
+
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        if (sensor != null)
+            sensorManager.unregisterListener(this);
+        else if (sensorProximity != null)
+            sensorManagerProximity.unregisterListener(this);
+    }
+
+    @Override
+    public void onSensorChanged(SensorEvent event) {
+        //Acelerómetro
+        float x = event.values[0];
+        float y = event.values[1];
+        float z = event.values[2];
+        long currentTime = SystemClock.currentThreadTimeMillis();
+        if ((currentTime - oldTime) > 100) {
+
+            long timeDiff = currentTime - oldTime;
+            oldTime = currentTime;
+            // *10000 para volver a segundos
+            float speed = Math.abs(x + y + z - xOld - yOld - zOld) / timeDiff * 10000;
+            if (speed > threaShold) {
+                Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                vibrator.vibrate(500);
+                //Toast.makeText(getApplicationContext(), "It Works Mateo!!!! hahaha", Toast.LENGTH_SHORT).show();
+                sensorManager.unregisterListener(this);
+                showRandomOption();
+            }
+
+        }
+        //Sensor de proximidad
+        if (event.sensor.getType() == Sensor.TYPE_PROXIMITY) {
+            if (event.values[0] >= -0.01 && event.values[0] <= 0.01) {
+                //Cerca
+                sensorManagerProximity.unregisterListener(this);
+                showRandomOption();
+            }
+        }
+    }
+
+    private void showRandomOption() {
+        Random selected = new Random();
+        final int min = 0;
+        final int max = listData.size();
+        System.out.println("Max: " + max);
+        final int random = selected.nextInt((max - min) - 1) + min;
+        System.out.println("random = " + random);
+        adapterOption = listData.get(random);
+        AlertDialog alertDialog = new AlertDialog.Builder(new ContextThemeWrapper(Subcategories.this, R.style.myDialog)).create();
+        /*
+        TextView myMsg = new TextView(this);
+        myMsg.setTextColor(R.color.Hugo);
+        myMsg.setText(adapterOption.Category);
+        myMsg.setTextColor(R.color.Hugo);
+        myMsg.setGravity(Gravity.CENTER_HORIZONTAL);
+        myMsg.setAllCaps(true);
+        alertDialog.setView(myMsg);
+        */
+        alertDialog.setMessage(adapterOption.Category);
+        alertDialog.setTitle("The randomly selected is...");
+        alertDialog.setIcon(android.R.drawable.btn_star_big_on);
+        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "OK!", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intentMain = new Intent(getApplicationContext(), MainActivity.class);
+                intentMain.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intentMain);
+            }
+        });
+        alertDialog.show();
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int i) {
+
+    }
 
     public void bu_goHome(View view) {
         Intent intentMain = new Intent(this, MainActivity.class);
