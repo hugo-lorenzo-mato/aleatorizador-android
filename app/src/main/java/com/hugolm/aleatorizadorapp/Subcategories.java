@@ -1,13 +1,22 @@
 package com.hugolm.aleatorizadorapp;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+import android.os.SystemClock;
+import android.os.Vibrator;
+import android.provider.Settings;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.view.ContextThemeWrapper;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +28,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Subcategories extends AppCompatActivity {
 
@@ -28,6 +39,7 @@ public class Subcategories extends AppCompatActivity {
     CustomAdapter myAdapter;
     DataBaseManager db;
     Bundle b;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +52,10 @@ public class Subcategories extends AppCompatActivity {
         myAdapter = new CustomAdapter(listData);
         myListView.setAdapter(myAdapter);
         ShowListSub();
-
     }
 
-    public void bu_goHome(View view){
+
+    public void bu_goHome(View view) {
         Intent intentMain = new Intent(this, MainActivity.class);
         intentMain.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intentMain);
@@ -159,8 +171,6 @@ public class Subcategories extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
-
-
 
 
             return myView;
