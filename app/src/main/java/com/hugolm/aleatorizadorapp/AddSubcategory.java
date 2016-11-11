@@ -31,7 +31,7 @@ public class AddSubcategory extends AppCompatActivity {
 
 
     public void ConfirmAddSub(View view) {
-        Toast.makeText(getApplicationContext(), "La categoría padre es" + parentCategory, Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(), "La categoría padre es" + parentCategory, Toast.LENGTH_LONG).show();
         values.put(DataBaseManager.ColParentSubCategories, parentCategory);
         values.put(DataBaseManager.ColNameSubCategories, et_addSub.getText().toString());
         long result = db.InsertSub(values);
@@ -43,7 +43,9 @@ public class AddSubcategory extends AppCompatActivity {
         Intent intentMain = new Intent(this, Subcategories.class);
         //Toast.makeText(getApplicationContext(), "La categoría que mandamos otra vez para hacer el show es: " + parentCategory, Toast.LENGTH_SHORT).show();
         intentMain.putExtra("Category", parentCategory);
+        intentMain.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intentMain);
+        finish();
 
     }
 }

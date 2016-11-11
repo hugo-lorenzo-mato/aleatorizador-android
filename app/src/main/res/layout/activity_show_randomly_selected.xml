@@ -14,31 +14,34 @@
         android:text="Start Again"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="157dp"
+        android:layout_marginBottom="110dp"
         android:id="@+id/bu_rotate"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
         android:background="@drawable/bu_color"
-        android:onClick="onStartAgain" />
+        android:onClick="onStartAgain"
+        app:srcCompat="@drawable/star2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvSelected"
         android:text="BMW"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
         android:fontFamily="sans-serif"
         android:textColor="@color/Hugo"
-        android:textSize="36sp" />
+        android:textSize="36sp"
+        android:layout_marginBottom="76dp"
+        android:layout_above="@+id/bu_rotate"
+        android:layout_centerHorizontal="true" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/refresh_medium"
+        app:srcCompat="@drawable/rsz_star2"
         android:id="@+id/ivSelected"
+        android:layout_marginBottom="50dp"
         android:layout_above="@+id/tvSelected"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="44dp" />
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

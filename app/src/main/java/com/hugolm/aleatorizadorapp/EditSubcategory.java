@@ -44,6 +44,8 @@ public class EditSubcategory extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Not Updated", Toast.LENGTH_SHORT).show();
         Intent intentMain = new Intent(this, Subcategories.class);
         intentMain.putExtra("Category", parentCategory);
+        intentMain.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intentMain);
+        finish();
     }
 }

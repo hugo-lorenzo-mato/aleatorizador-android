@@ -54,10 +54,6 @@ public class Subcategories extends AppCompatActivity implements SensorEventListe
     // Para proximidad
     private SensorManager sensorManagerProximity;
     private Sensor sensorProximity;
-    // Para Giroscopio
-    private SensorManager sManagerGiro;
-    private Sensor sensorGiro;
-
 
 
     @Override
@@ -75,25 +71,18 @@ public class Subcategories extends AppCompatActivity implements SensorEventListe
         sensor = sensorManager.getDefaultSensor(sensor.TYPE_ACCELEROMETER);
         sensorManagerProximity = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         sensorProximity = sensorManagerProximity.getDefaultSensor(Sensor.TYPE_PROXIMITY);
-        //giroscopio
-        //sManagerGiro = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-        //sensorGiro = sManagerGiro.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
-
     }
 
     @Override
     public void onResume() {
+        // Si el teléfono dispone de sensor de proximidad, funciona con el mismo, sino con el acelerómetro
         super.onResume();
         //Si no está disponible en el dispositivo el sacelerómetro
-        if (sensor != null)
-            sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_GAME);
-        //Si no está disponible en el dispositivo el sensor de próximidad
         if (sensorProximity != null)
             sensorManagerProximity.registerListener(this, sensorProximity, SensorManager.SENSOR_DELAY_NORMAL);
-        //if (sensorGiro != null)
-        //    sManagerGiro.registerListener(this,sensorGiro,sManagerGiro.SENSOR_DELAY_GAME);
-
-
+        else if (sensor != null)
+            sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_FASTEST);
+        //Si no está disponible en el dispositivo el sensor de próximidad
     }
 
     @Override
@@ -110,22 +99,8 @@ public class Subcategories extends AppCompatActivity implements SensorEventListe
             shake(event);
         if (event.sensor.getType() == Sensor.TYPE_PROXIMITY)
             proximity(event);
-        //if (event.sensor.getType() == Sensor.TYPE_GYROSCOPE)
-        //    Toast.makeText(this,"giro",Toast.LENGTH_LONG).show();
     }
 
-    private void giro(SensorEvent event) {
-        DecimalFormat temp = new DecimalFormat("#.##");
-        String x = temp.format(event.values[0]);
-        String y = temp.format(event.values[1]);
-        String z = temp.format(event.values[2]);
-        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        vibrator.vibrate(500);
-        showRandomOption();
-
-
-
-    }
 
     private void proximity(SensorEvent event) {
         //Sensor de proximidad
@@ -136,6 +111,7 @@ public class Subcategories extends AppCompatActivity implements SensorEventListe
                 Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 vibrator.vibrate(500);
                 showRandomOption();
+                finish();
             }
         }
     }
@@ -155,9 +131,9 @@ public class Subcategories extends AppCompatActivity implements SensorEventListe
             if (speed > threaShold) {
                 Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 vibrator.vibrate(500);
-                //Toast.makeText(getApplicationContext(), "It Works Mateo!!!! hahaha", Toast.LENGTH_SHORT).show();
                 sensorManager.unregisterListener(this);
                 showRandomOption();
+                finish();
             }
         }
     }

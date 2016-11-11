@@ -41,6 +41,8 @@ public class EditCategory extends AppCompatActivity {
         else
             Toast.makeText(getApplicationContext(), "Not Updated", Toast.LENGTH_SHORT).show();
         Intent intentMain = new Intent(this, MainActivity.class);
+        intentMain.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intentMain);
+        finish();
     }
 }

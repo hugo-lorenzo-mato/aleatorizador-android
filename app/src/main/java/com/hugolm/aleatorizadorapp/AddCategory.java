@@ -40,7 +40,8 @@ public class AddCategory extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"Not Added: Insert some value",Toast.LENGTH_LONG).show();
         }
         Intent intentMain = new Intent(this, MainActivity.class);
+        intentMain.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intentMain);
-
+        finish();
     }
 }
