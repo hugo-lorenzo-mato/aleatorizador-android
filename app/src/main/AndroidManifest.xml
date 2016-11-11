@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.hugolm.aleatorizadorapp">
+
     <uses-feature android:name="android.hardware.sensor.accelerometer" />
-    <uses-permission android:name="android.permission.VIBRATE"></uses-permission>
+
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -21,7 +23,8 @@
         <activity android:name=".EditCategory" />
         <activity android:name=".Subcategories" />
         <activity android:name=".AddSubcategory" />
-        <activity android:name=".EditSubcategory"></activity>
+        <activity android:name=".EditSubcategory" />
+        <activity android:name=".Show_randomly_selected"></activity>
     </application>
 
 </manifest>

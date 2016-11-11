@@ -29,6 +29,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.sql.SQLOutput;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -53,6 +54,11 @@ public class Subcategories extends AppCompatActivity implements SensorEventListe
     // Para proximidad
     private SensorManager sensorManagerProximity;
     private Sensor sensorProximity;
+    // Para Giroscopio
+    private SensorManager sManagerGiro;
+    private Sensor sensorGiro;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +75,9 @@ public class Subcategories extends AppCompatActivity implements SensorEventListe
         sensor = sensorManager.getDefaultSensor(sensor.TYPE_ACCELEROMETER);
         sensorManagerProximity = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         sensorProximity = sensorManagerProximity.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+        //giroscopio
+        //sManagerGiro = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        //sensorGiro = sManagerGiro.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
 
     }
 
@@ -77,24 +86,61 @@ public class Subcategories extends AppCompatActivity implements SensorEventListe
         super.onResume();
         //Si no está disponible en el dispositivo el sacelerómetro
         if (sensor != null)
-            sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_NORMAL);
-            //Si no está disponible en el dispositivo el sensor de próximidad
-        else if (sensorProximity != null)
+            sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_GAME);
+        //Si no está disponible en el dispositivo el sensor de próximidad
+        if (sensorProximity != null)
             sensorManagerProximity.registerListener(this, sensorProximity, SensorManager.SENSOR_DELAY_NORMAL);
+        //if (sensorGiro != null)
+        //    sManagerGiro.registerListener(this,sensorGiro,sManagerGiro.SENSOR_DELAY_GAME);
+
 
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        if (sensor != null)
-            sensorManager.unregisterListener(this);
-        else if (sensorProximity != null)
-            sensorManagerProximity.unregisterListener(this);
+        sensorManager.unregisterListener(this);
+        sensorManagerProximity.unregisterListener(this);
+        //sManagerGiro.unregisterListener(this);
     }
 
     @Override
     public void onSensorChanged(SensorEvent event) {
+        if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER)
+            shake(event);
+        if (event.sensor.getType() == Sensor.TYPE_PROXIMITY)
+            proximity(event);
+        //if (event.sensor.getType() == Sensor.TYPE_GYROSCOPE)
+        //    Toast.makeText(this,"giro",Toast.LENGTH_LONG).show();
+    }
+
+    private void giro(SensorEvent event) {
+        DecimalFormat temp = new DecimalFormat("#.##");
+        String x = temp.format(event.values[0]);
+        String y = temp.format(event.values[1]);
+        String z = temp.format(event.values[2]);
+        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        vibrator.vibrate(500);
+        showRandomOption();
+
+
+
+    }
+
+    private void proximity(SensorEvent event) {
+        //Sensor de proximidad
+        if (event.sensor.getType() == Sensor.TYPE_PROXIMITY) {
+            if (event.values[0] >= -0.01 && event.values[0] <= 0.01) {
+                //Cerca
+                sensorManagerProximity.unregisterListener(this);
+                Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                vibrator.vibrate(500);
+                showRandomOption();
+            }
+        }
+    }
+
+    private void shake(SensorEvent event) {
         //Acelerómetro
         float x = event.values[0];
         float y = event.values[1];
@@ -113,15 +159,6 @@ public class Subcategories extends AppCompatActivity implements SensorEventListe
                 sensorManager.unregisterListener(this);
                 showRandomOption();
             }
-
-        }
-        //Sensor de proximidad
-        if (event.sensor.getType() == Sensor.TYPE_PROXIMITY) {
-            if (event.values[0] >= -0.01 && event.values[0] <= 0.01) {
-                //Cerca
-                sensorManagerProximity.unregisterListener(this);
-                showRandomOption();
-            }
         }
     }
 
@@ -133,28 +170,12 @@ public class Subcategories extends AppCompatActivity implements SensorEventListe
         final int random = selected.nextInt((max - min) - 1) + min;
         System.out.println("random = " + random);
         adapterOption = listData.get(random);
-        AlertDialog alertDialog = new AlertDialog.Builder(new ContextThemeWrapper(Subcategories.this, R.style.myDialog)).create();
-        /*
-        TextView myMsg = new TextView(this);
-        myMsg.setTextColor(R.color.Hugo);
-        myMsg.setText(adapterOption.Category);
-        myMsg.setTextColor(R.color.Hugo);
-        myMsg.setGravity(Gravity.CENTER_HORIZONTAL);
-        myMsg.setAllCaps(true);
-        alertDialog.setView(myMsg);
-        */
-        alertDialog.setMessage(adapterOption.Category);
-        alertDialog.setTitle("The randomly selected is...");
-        alertDialog.setIcon(android.R.drawable.btn_star_big_on);
-        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "OK!", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int which) {
-                Intent intentMain = new Intent(getApplicationContext(), MainActivity.class);
-                intentMain.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intentMain);
-            }
-        });
-        alertDialog.show();
+        Intent intentMain = new Intent(getApplicationContext(), Show_randomly_selected.class);
+        intentMain.putExtra("winner", adapterOption.Category.toString());
+        intentMain.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intentMain);
     }
+
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int i) {
