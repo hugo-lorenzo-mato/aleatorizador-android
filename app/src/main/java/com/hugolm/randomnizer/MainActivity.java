@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     DataBaseManager db;
     private boolean isLarge;
     private String showsub;
+    ListView myListViewSub;
     /* Para las subcategorias */
 
     String parentCategory;
@@ -101,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void chargeSubOps() {
-        ListView myListViewSub = (ListView) findViewById(R.id.lvlistSub);
+        myListViewSub = (ListView) findViewById(R.id.lvlistSub);
         myAdapterSub = new CustomAdapterSub(listDataSub);
         myListViewSub.setAdapter(myAdapterSub);
     }
@@ -128,6 +129,8 @@ public class MainActivity extends AppCompatActivity {
 
         ListView lvData = (ListView) findViewById(R.id.lvlist);
         lvData.setAdapter(myAdapter);
+        View header = getLayoutInflater().inflate(R.layout.header, null);
+        lvData.addHeaderView(header);
     }
 
 
@@ -152,6 +155,8 @@ public class MainActivity extends AppCompatActivity {
         myAdapterSub = new CustomAdapterSub(listDataSub);
         ListView lvlistSub = (ListView) findViewById(R.id.lvlistSub);
         lvlistSub.setAdapter(myAdapterSub);
+        View header = getLayoutInflater().inflate(R.layout.headersub, null);
+        lvlistSub.addHeaderView(header);
     }
 
 

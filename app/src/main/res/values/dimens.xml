@@ -3,4 +3,8 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="fontSizeLayout">24sp</dimen>
+    <dimen name="fontSizeLayoutSelected">36sp</dimen>
+    <dimen name="fontSizeLayoutTitle">24sp</dimen>
+    <dimen name="fontSizeSetView">24sp</dimen>
 </resources>

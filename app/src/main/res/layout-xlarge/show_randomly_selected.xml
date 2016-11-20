@@ -10,28 +10,6 @@
     tools:context="com.hugolm.randomnizer.Show_randomly_selected">
 
 
-    <Button
-        android:text="Start Again"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/bu_rotate"
-        android:background="@drawable/bu_color"
-        android:onClick="onStartAgain"
-        app:srcCompat="@drawable/star2"
-        android:layout_marginBottom="114dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/rsz_star2"
-        android:id="@+id/ivSelected"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="101dp" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -40,8 +18,29 @@
         android:fontFamily="sans-serif"
         android:textColor="@color/Hugo"
         android:textSize="@dimen/fontSizeLayoutSelected"
-        android:layout_below="@+id/ivSelected"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="Start Again"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bu_rotate"
+        android:background="@drawable/bu_color"
+        android:onClick="onStartAgain"
+        app:srcCompat="@drawable/star2"
+        android:layout_below="@+id/tvSelected"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="131dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/rsz_star2"
+        android:id="@+id/ivSelected"
+        android:layout_above="@+id/tvSelected"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="71dp" />
+        android:layout_marginBottom="75dp" />
 
 </RelativeLayout>

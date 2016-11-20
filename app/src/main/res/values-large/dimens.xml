@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fontSizeLayout">28sp</dimen>
+    <dimen name="fontSizeLayoutSelected">46sp</dimen>
+    <dimen name="fontSizeLayoutTitle">23sp</dimen>
+    <dimen name="fontSizeSetView">28sp</dimen>
+</resources>
