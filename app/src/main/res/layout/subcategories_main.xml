@@ -6,7 +6,7 @@
     android:fitsSystemWindows="true"
     android:background="#59ABE3"
     android:padding="2dp"
-    tools:context="com.hugolm.randomnizer.SubcategoriesActivity">
+    tools:context="com.hugolm.randomnizer.MainActivity">
 
 
     <include layout="@layout/content_subcategories" />
