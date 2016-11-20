@@ -31,13 +31,13 @@ public class AddCategory extends AppCompatActivity {
         if (values.size() > 0) {
             long result = db.Insert(values);
             if (result > 0)
-                Toast.makeText(getApplicationContext(),"Category: " + et_add.getText().toString() +
-                        ", added", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),this.getString(R.string.toast_cat_add1) + et_add.getText().toString() +
+                        this.getString(R.string.toast_cat_add2) , Toast.LENGTH_LONG).show();
             else
-               Toast.makeText(getApplicationContext(),"Not Added", Toast.LENGTH_LONG).show();
+               Toast.makeText(getApplicationContext(),this.getString(R.string.toast_cat_notadded), Toast.LENGTH_LONG).show();
 
         }else {
-            Toast.makeText(getApplicationContext(),"Not Added: Insert some value",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),this.getString(R.string.toast_cat_notadded2),Toast.LENGTH_LONG).show();
         }
         Intent intentMain = new Intent(this, MainActivity.class);
         intentMain.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

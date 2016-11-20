@@ -31,5 +31,5 @@
         android:layout_marginTop="221dp"
         android:background="@drawable/bu_color"
         android:onClick="EditConfirmedSub"
-        android:text="Update" />
+        android:text="@string/update_subcat" />
 </RelativeLayout>

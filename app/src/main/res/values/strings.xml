@@ -1,4 +1,39 @@
 <resources>
     <string name="app_name">Randomnizer</string>
     <string name="action_settings">Settings</string>
+    <string name="insert_categ_name">Insert category name</string>
+    <string name="button_add_cat">Add</string>
+    <string name="ins_opt_name">Insert option name</string>
+    <string name="button_ad_subcat">Add</string>
+    <string name="update_cat">Update</string>
+    <string name="update_subcat">Update</string>
+    <string name="header_cat">Categories</string>
+    <string name="header_subcat">Subcategories</string>
+    <string name="button_start_again">Start Again</string>
+    <string name="toast_cat_add1">Category: </string>
+    <string name="toast_cat_add2">, added</string>
+    <string name="toast_cat_notadded">Not Added</string>
+    <string name="toast_cat_notadded2">Not Added: Insert some value</string>
+    <string name="toast_subcat_add1">Option: </string>
+    <string name="toast_subcat_add2">, added in Category: </string>
+    <string name="toast_subcat_notadded">Not Added</string>
+    <string name="toast_editcat1">Category: </string>
+    <string name="toast_editcat2">, now is: </string>
+    <string name="toast_noteditcat">Not Updated</string>
+
+    <string name="toast_editsubcat1">Option: </string>
+    <string name="toast_editsubcat2">, now is: </string>
+    <string name="toast_noteditsubcat">Not Updated</string>
+    <string name="onAddSub_error">Error: </string>
+    <string name="onAddSub_error1">You should select a category previously</string>
+    <string name="onAddSub1">Deleting Category </string>
+    <string name="onAddSub2">Are you sure you want to delete it?</string>
+    <string name="onAddSub3">Category: </string>
+    <string name="onAddSub4"> deleted</string>
+    <string name="Cancel">Dismiss</string>
+    <string name="Confirm">Confirm</string>
+    <string name="onAddSub5">Deleting Subcategory </string>
+    <string name="onAddSub6">SubCategory: </string>
+    <string name="insert_option">You should insert at least one option</string>
+    <string name="ok">Ok</string>
 </resources>

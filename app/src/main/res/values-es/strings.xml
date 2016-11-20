@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Aleatorizador</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="insert_categ_name">Inserte nueva categoría</string>
+    <string name="button_add_cat">Añadir</string>
+    <string name="ins_opt_name">Insertar nueva alternativa</string>
+    <string name="button_ad_subcat">Añadir</string>
+    <string name="update_cat">Actualizar</string>
+    <string name="update_subcat">Actualizar</string>
+    <string name="header_cat">Categorías</string>
+    <string name="header_subcat">Subcategorías</string>
+    <string name="button_start_again">Comenzar de nuevo</string>
+    <string name="toast_cat_add1">"Categoría: "</string>
+    <string name="toast_cat_add2">, añadida</string>
+    <string name="toast_cat_notadded">No añadida</string>
+    <string name="toast_cat_notadded2">No añadida: inserte algún valor</string>
+    <string name="toast_subcat_add1">"Opción: "</string>
+    <string name="toast_subcat_add2">, añadida en categoría:</string>
+    <string name="toast_subcat_notadded">No añadida</string>
+    <string name="toast_editcat1">"Categoría: "</string>
+    <string name="toast_editcat2">", ahora es: "</string>
+    <string name="toast_noteditcat">No actualizada</string>
+    <string name="toast_editsubcat1">Opción:</string>
+    <string name="toast_editsubcat2">", ahora es: "</string>
+    <string name="toast_noteditsubcat">No actualizada</string>
+    <string name="onAddSub_error">"Error: "</string>
+    <string name="onAddSub_error1">Debe seleccionar una categoría antes</string>
+    <string name="onAddSub1">"Borrando categoría "</string>
+    <string name="onAddSub2">¿Está seguro de que desea borrarla?</string>
+    <string name="onAddSub3">"Categoría: "</string>
+    <string name="onAddSub4">" eliminada"</string>
+    <string name="Cancel">Cancelar</string>
+    <string name="Confirm">Confirmar</string>
+    <string name="onAddSub5">"Borrando opción "</string>
+    <string name="onAddSub6">"Opción: "</string>
+    <string name="ok">De acuerdo</string>
+    <string name="insert_option">Debe insertar al menos una opción</string>
+</resources>

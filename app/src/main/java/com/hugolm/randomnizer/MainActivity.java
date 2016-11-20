@@ -5,6 +5,7 @@ import android.app.FragmentManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.database.Cursor;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -43,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
     private boolean isLarge;
     private String showsub;
     ListView myListViewSub;
+    View headersub;
+    View headercat;
     /* Para las subcategorias */
 
     String parentCategory;
@@ -114,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
         sensorProximity = sensorManagerProximity.getDefaultSensor(Sensor.TYPE_PROXIMITY);
     }
 
-    private void ShowList() {
+     private void ShowList() {
 
         String[] projection = {"Category"};
         Cursor cursor = db.Query(projection, null, null, db.ColNameCategories);
@@ -124,13 +127,13 @@ public class MainActivity extends AppCompatActivity {
                 listData.add(new AdapterItems(cursor.getString(cursor.getColumnIndex(db.ColNameCategories))));
             } while (cursor.moveToNext());
         }
-
         myAdapter = new CustomAdapter(listData);
-
         ListView lvData = (ListView) findViewById(R.id.lvlist);
         lvData.setAdapter(myAdapter);
-        View header = getLayoutInflater().inflate(R.layout.header, null);
-        lvData.addHeaderView(header);
+        if (headercat == null) {
+            headercat = getLayoutInflater().inflate(R.layout.header, null);
+            lvData.addHeaderView(headercat);
+        }
     }
 
 
@@ -155,8 +158,10 @@ public class MainActivity extends AppCompatActivity {
         myAdapterSub = new CustomAdapterSub(listDataSub);
         ListView lvlistSub = (ListView) findViewById(R.id.lvlistSub);
         lvlistSub.setAdapter(myAdapterSub);
-        View header = getLayoutInflater().inflate(R.layout.headersub, null);
-        lvlistSub.addHeaderView(header);
+        if (headersub == null) {
+            headersub = getLayoutInflater().inflate(R.layout.headersub, null);
+            lvlistSub.addHeaderView(headersub);
+        }
     }
 
 
@@ -175,8 +180,8 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         } else {
             AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
-            alertDialog.setTitle("Error: ");
-            alertDialog.setMessage("You should select a category previously");
+            alertDialog.setTitle(this.getString(R.string.onAddSub_error));
+            alertDialog.setMessage(this.getString(R.string.onAddSub_error1));
             alertDialog.setIcon(android.R.drawable.ic_dialog_alert);
             alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Ok", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
@@ -187,6 +192,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void bu_OnAddSub2(View view) {
+            Intent intentMain = new Intent(this, MainActivity.class);
+            intentMain.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intentMain);
+    }
 
     class CustomAdapter extends BaseAdapter {
         public ArrayList<AdapterItems> listDataAdpater;
@@ -214,9 +224,7 @@ public class MainActivity extends AppCompatActivity {
         public View getView(int position, View convertView, final ViewGroup parent) {
             LayoutInflater mInflater = getLayoutInflater();
             View myView = mInflater.inflate(R.layout.layout_ticket, null);
-
             final AdapterItems s = listDataAdpater.get(position);
-
             TextView txtCategory = (TextView) myView.findViewById(R.id.tvlayoutcategory);
             txtCategory.setText(s.Category);
 
@@ -243,20 +251,21 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View view) {
 
                     AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
-                    alertDialog.setTitle("Deleting Category " + s.Category);
-                    alertDialog.setMessage("Are you sure you want to delete it?");
+                    alertDialog.setTitle(MainActivity.this.getString(R.string.onAddSub1) + s.Category);
+                    alertDialog.setMessage(MainActivity.this.getString(R.string.onAddSub2));
                     alertDialog.setIcon(android.R.drawable.ic_dialog_alert);
-                    alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Dismiss", new DialogInterface.OnClickListener() {
+                    alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, MainActivity.this.getString(R.string.Cancel), new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             dialog.dismiss();
                         }
                     });
-                    alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Confirm", new DialogInterface.OnClickListener() {
+                    alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, MainActivity.this.getString(R.string.Confirm), new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             String[] selectionArgs = {s.Category};
                             int result = db.delete("Category = ?", selectionArgs);
                             if (result > 0) {
-                                Toast.makeText(getApplicationContext(), "Category: " + s.Category + " deleted", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), MainActivity.this.getString(R.string.onAddSub3)
+                                        + s.Category + MainActivity.this.getString(R.string.onAddSub4), Toast.LENGTH_SHORT).show();
                                 ShowList();
                             }
                         }
@@ -326,20 +335,22 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View view) {
 
                     AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
-                    alertDialog.setTitle("Deleting Subcategory " + s.Category);
-                    alertDialog.setMessage("Are you sure you want to delete it?");
+                    alertDialog.setTitle(MainActivity.this.getString(R.string.onAddSub5) + s.Category);
+                    alertDialog.setMessage(MainActivity.this.getString(R.string.onAddSub2));
                     alertDialog.setIcon(android.R.drawable.ic_dialog_alert);
-                    alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Dismiss", new DialogInterface.OnClickListener() {
+                    alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, MainActivity.this.getString(R.string.Cancel), new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             dialog.dismiss();
                         }
                     });
-                    alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Confirm", new DialogInterface.OnClickListener() {
+                    alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, MainActivity.this.getString(R.string.Confirm), new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             String[] selectionArgs = {s.Category};
                             int result = db.deleteSub("SubCategory = ?", selectionArgs);
                             if (result > 0) {
-                                Toast.makeText(MainActivity.this, "SubCategory: " + s.Category + " deleted", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this, MainActivity.this.getString(R.string.onAddSub6)
+                                                + s.Category + MainActivity.this.getString(R.string.onAddSub4),
+                                        Toast.LENGTH_SHORT).show();
                                 ShowListSub();
                             }
                         }
@@ -458,10 +469,10 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intentMain);
         } catch (Exception e) {
             AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
-            alertDialog.setTitle("Error: ");
-            alertDialog.setMessage("You should insert at least one option");
+            alertDialog.setTitle(MainActivity.this.getString(R.string.onAddSub_error));
+            alertDialog.setMessage(MainActivity.this.getString(R.string.insert_option));
             alertDialog.setIcon(android.R.drawable.ic_dialog_alert);
-            alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Ok", new DialogInterface.OnClickListener() {
+            alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, MainActivity.this.getString(R.string.ok), new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
                     dialog.dismiss();
                 }

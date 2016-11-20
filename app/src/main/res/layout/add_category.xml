@@ -16,14 +16,14 @@
         android:layout_marginTop="103dp"
         android:id="@+id/et_addSub"
         android:inputType="text"
-        android:hint="Insert category name"
+        android:hint="@string/insert_categ_name"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:textColor="?android:attr/colorForeground"
         android:textSize="@dimen/fontSizeSetView" />
 
     <Button
-        android:text="Add"
+        android:text="@string/button_add_cat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"

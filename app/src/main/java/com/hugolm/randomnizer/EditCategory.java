@@ -37,12 +37,14 @@ public class EditCategory extends AppCompatActivity {
         String[] SelectionArgs = {previousName};
         int result = db.Update(values, "Category = ?", SelectionArgs);
         if (result > 0) {
-            Toast.makeText(getApplicationContext(), "Category: " + previousName + ", now is: " + etEdition.getText().toString(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), this.getString(R.string.toast_editcat1) + previousName
+                    + this.getString(R.string.toast_editcat2)
+                    + etEdition.getText().toString(), Toast.LENGTH_SHORT).show();
             values.clear();
             values.put("ParentCategory", etEdition.getText().toString());
             result = db.UpdateSub(values,"ParentCategory = ?", SelectionArgs);
         }else
-            Toast.makeText(getApplicationContext(), "Not Updated", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), this.getString(R.string.toast_noteditcat), Toast.LENGTH_SHORT).show();
         Intent intentMain = new Intent(this, MainActivity.class);
         startActivity(intentMain);
     }
