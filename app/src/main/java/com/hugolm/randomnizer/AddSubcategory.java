@@ -38,10 +38,10 @@ public class AddSubcategory extends AppCompatActivity {
         values.put(DataBaseManager.ColNameSubCategories, et_addSub.getText().toString());
         long result = db.InsertSub(values);
         if (result > 0)
-            Toast.makeText(getApplicationContext(), "Option: " + et_addSub.getText().toString() +
-                    ", added in Category: " + parentCategory, Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), this.getString(R.string.toast_subcat_add1) + et_addSub.getText().toString() +
+                    this.getString(R.string.toast_subcat_add2) + parentCategory, Toast.LENGTH_LONG).show();
         else
-            Toast.makeText(getApplicationContext(), "Not Added", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), this.getString(R.string.toast_subcat_notadded), Toast.LENGTH_LONG).show();
         Intent intentMain = new Intent(this, MainActivity.class);
         //Toast.makeText(getApplicationContext(), "La categoría que mandamos otra vez para hacer el show es: " + parentCategory, Toast.LENGTH_SHORT).show();
         intentMain.putExtra("Category", parentCategory);

@@ -11,7 +11,7 @@
 
 
     <Button
-        android:text="Start Again"
+        android:text="@string/button_start_again"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/bu_rotate"
@@ -36,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvSelected"
-        android:text="BMW"
+        android:text=""
         android:fontFamily="sans-serif"
         android:textColor="@color/Hugo"
         android:textSize="@dimen/fontSizeLayoutSelected"

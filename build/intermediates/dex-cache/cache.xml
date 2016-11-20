@@ -3,120 +3,21 @@
 
     <item
         is-multidex="true"
-        jar="/home/hugo/AndroidStudioProjects/p2-ipm-16-17-hugo-lorenzo-mato/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="4ccbcda5c72027c7f7c14be9ff8640d9cb0d8da0">
-        <dex dex="/home/hugo/AndroidStudioProjects/p2-ipm-16-17-hugo-lorenzo-mato/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.0.0_99e090fde01412736fbc0dd7344ed5d98d43a529/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/hugo/AndroidStudioProjects/p2-ipm-16-17-hugo-lorenzo-mato/app/build/intermediates/exploded-aar/com.android.support/transition/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="0c6d948e6cb9ea6f535d175fb61ba2930719c0e9">
-        <dex dex="/home/hugo/AndroidStudioProjects/p2-ipm-16-17-hugo-lorenzo-mato/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.0.0_80af876eb8e52a81aad1c2f90bd6a3d3f6947661/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/hugo/Escritorio/GitHub/Randomnizer/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="bff50ca48014d7a0e998ba635b2a1facfa7d2ff5">
-        <dex dex="/home/hugo/Escritorio/GitHub/Randomnizer/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_5638cd54fd8a5b61bea896f5ef4cb5def2da7ee3/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/hugo/AndroidStudioProjects/p2-ipm-16-17-hugo-lorenzo-mato/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="5e497d60f0cb6ce87c458ac5420a46d0fed49bd0">
-        <dex dex="/home/hugo/AndroidStudioProjects/p2-ipm-16-17-hugo-lorenzo-mato/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.0.0_502fe3b787e9dfc27b5ede4f3de6781d33025c55/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/hugo/Escritorio/GitHub/Randomnizer/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="26674000177e45447a0326a6ad84612761199a13">
-        <dex dex="/home/hugo/Escritorio/GitHub/Randomnizer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.0.0_dd66b4e9e988d2a6e733e75196c5eb618ef7705c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/hugo/Escritorio/GitHub/Randomnizer/app/build/intermediates/exploded-aar/com.android.support/design/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="26384be22ddc74cfe197ebda9edbc7d1fd8bd537">
-        <dex dex="/home/hugo/Escritorio/GitHub/Randomnizer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-25.0.0_ab5c370f6ecb31fa39c474c94a40c9f03abb2804/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/hugo/Escritorio/GitHub/Randomnizer/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
-        <dex dex="/home/hugo/Escritorio/GitHub/Randomnizer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.0.0_b4ec9c09a60bf6f633149248c8cad7c765074fe8/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/hugo/AndroidStudioProjects/p2-ipm-16-17-hugo-lorenzo-mato/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/home/hugo/AndroidStudioProjects/p2-ipm-16-17-hugo-lorenzo-mato/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.0.0_592c0a868c6027e43b64434217abb0420209ce6a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/hugo/AndroidStudioProjects/p2-ipm-16-17-hugo-lorenzo-mato/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="f2e3b9bc1ec25f652e8007ce7774c991e38f6a00">
-        <dex dex="/home/hugo/AndroidStudioProjects/p2-ipm-16-17-hugo-lorenzo-mato/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_23aac67f1955a30619d92a035e1b76ddad69a258/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/hugo/Escritorio/GitHub/Randomnizer/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/libs/internal_impl-25.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="ee5faf4dee5b6a4364bf51587871047dde7c703a">
-        <dex dex="/home/hugo/Escritorio/GitHub/Randomnizer/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_c25af3352ac99faab350b430a5c344934346dc76/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/hugo/Escritorio/GitHub/Randomnizer/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="f2e3b9bc1ec25f652e8007ce7774c991e38f6a00">
-        <dex dex="/home/hugo/Escritorio/GitHub/Randomnizer/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_a7919005b930703eb79f3c7862220e4da5a8a648/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/hugo/Escritorio/GitHub/Randomnizer/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="75b1f366ff0bbc78f8b1f7cf0dc82e7c53afef6a">
-        <dex dex="/home/hugo/Escritorio/GitHub/Randomnizer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.0.0_5cd85ee2ccab26ad0816adbca95f2a72fd156c24/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/home/hugo/AndroidStudioProjects/p2-ipm-16-17-hugo-lorenzo-mato/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
         <dex dex="/home/hugo/AndroidStudioProjects/p2-ipm-16-17-hugo-lorenzo-mato/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.0.0_42dabac748df333d65ee8cc22863c0a206fdf6d7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/hugo/AndroidStudioProjects/p2-ipm-16-17-hugo-lorenzo-mato/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4ccbcda5c72027c7f7c14be9ff8640d9cb0d8da0">
+        <dex dex="/home/hugo/AndroidStudioProjects/p2-ipm-16-17-hugo-lorenzo-mato/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.0.0_99e090fde01412736fbc0dd7344ed5d98d43a529/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -192,12 +93,39 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/hugo/AndroidStudioProjects/p2-ipm-16-17-hugo-lorenzo-mato/app/build/intermediates/exploded-aar/com.android.support/transition/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0c6d948e6cb9ea6f535d175fb61ba2930719c0e9">
+        <dex dex="/home/hugo/AndroidStudioProjects/p2-ipm-16-17-hugo-lorenzo-mato/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.0.0_80af876eb8e52a81aad1c2f90bd6a3d3f6947661/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/hugo/Escritorio/GitHub/Randomnizer/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="bff50ca48014d7a0e998ba635b2a1facfa7d2ff5">
+        <dex dex="/home/hugo/Escritorio/GitHub/Randomnizer/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_5638cd54fd8a5b61bea896f5ef4cb5def2da7ee3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/hugo/Escritorio/GitHub/Randomnizer/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/libs/internal_impl-25.0.0.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
         <dex dex="/home/hugo/Escritorio/GitHub/Randomnizer/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_e439d5d48edd3c83d31fd9488508495d15bc92cd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/hugo/AndroidStudioProjects/p2-ipm-16-17-hugo-lorenzo-mato/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5e497d60f0cb6ce87c458ac5420a46d0fed49bd0">
+        <dex dex="/home/hugo/AndroidStudioProjects/p2-ipm-16-17-hugo-lorenzo-mato/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.0.0_502fe3b787e9dfc27b5ede4f3de6781d33025c55/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -210,6 +138,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/hugo/Escritorio/GitHub/Randomnizer/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="26674000177e45447a0326a6ad84612761199a13">
+        <dex dex="/home/hugo/Escritorio/GitHub/Randomnizer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.0.0_dd66b4e9e988d2a6e733e75196c5eb618ef7705c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/hugo/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.0.0/support-annotations-25.0.0.jar"
         jumboMode="true"
         optimize="true"
@@ -219,12 +156,57 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/hugo/Escritorio/GitHub/Randomnizer/app/build/intermediates/exploded-aar/com.android.support/design/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="26384be22ddc74cfe197ebda9edbc7d1fd8bd537">
+        <dex dex="/home/hugo/Escritorio/GitHub/Randomnizer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-25.0.0_ab5c370f6ecb31fa39c474c94a40c9f03abb2804/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/hugo/Escritorio/GitHub/Randomnizer/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
+        <dex dex="/home/hugo/Escritorio/GitHub/Randomnizer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.0.0_b4ec9c09a60bf6f633149248c8cad7c765074fe8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/hugo/Escritorio/GitHub/Randomnizer/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="4ccbcda5c72027c7f7c14be9ff8640d9cb0d8da0">
         <dex dex="/home/hugo/Escritorio/GitHub/Randomnizer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.0.0_4483eb3e957c888d11fe60a5127c8b8564f7d27c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/hugo/AndroidStudioProjects/p2-ipm-16-17-hugo-lorenzo-mato/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/home/hugo/AndroidStudioProjects/p2-ipm-16-17-hugo-lorenzo-mato/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.0.0_592c0a868c6027e43b64434217abb0420209ce6a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/hugo/AndroidStudioProjects/p2-ipm-16-17-hugo-lorenzo-mato/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f2e3b9bc1ec25f652e8007ce7774c991e38f6a00">
+        <dex dex="/home/hugo/AndroidStudioProjects/p2-ipm-16-17-hugo-lorenzo-mato/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_23aac67f1955a30619d92a035e1b76ddad69a258/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/hugo/Escritorio/GitHub/Randomnizer/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ee5faf4dee5b6a4364bf51587871047dde7c703a">
+        <dex dex="/home/hugo/Escritorio/GitHub/Randomnizer/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_c25af3352ac99faab350b430a5c344934346dc76/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -259,8 +241,17 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="afae7480e9306d5dfea53f0376f5a3878ac20a35">
+        sha1="9fe131a8b06239983690b0b39d00b64f79d0a8e0">
         <dex dex="/home/hugo/AndroidStudioProjects/p2-ipm-16-17-hugo-lorenzo-mato/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_7844cc2541dd4dfa6e25bb8152612b7bc67d1268/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/hugo/Escritorio/GitHub/Randomnizer/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f2e3b9bc1ec25f652e8007ce7774c991e38f6a00">
+        <dex dex="/home/hugo/Escritorio/GitHub/Randomnizer/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.0_a7919005b930703eb79f3c7862220e4da5a8a648/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -268,7 +259,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="4da3a7fc5f09b683cdd6ad8abe6581d8232bd24f">
+        sha1="cac11dc2f8620af03cf13f33a1e36090e98f891b">
         <dex dex="/home/hugo/AndroidStudioProjects/p2-ipm-16-17-hugo-lorenzo-mato/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_01477e02ef82e26f5b97af4001d31a0651984ef6/classes.dex" />
     </item>
     <item
@@ -279,6 +270,15 @@
         revision="25.0.0"
         sha1="d29714cc76b38157e3cbd034c66e1ec808eb4c19">
         <dex dex="/home/hugo/AndroidStudioProjects/p2-ipm-16-17-hugo-lorenzo-mato/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.0.0_d7178f3196e03ad3ee244cde0743bda557904db3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/hugo/Escritorio/GitHub/Randomnizer/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="75b1f366ff0bbc78f8b1f7cf0dc82e7c53afef6a">
+        <dex dex="/home/hugo/Escritorio/GitHub/Randomnizer/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.0.0_5cd85ee2ccab26ad0816adbca95f2a72fd156c24/classes.dex" />
     </item>
     <item
         is-multidex="true"

@@ -39,9 +39,11 @@ public class EditSubcategory extends AppCompatActivity {
         String[] SelectionArgs = {previousName};
         int result = db.UpdateSub(values, "SubCategory = ?", SelectionArgs);
         if (result > 0)
-            Toast.makeText(getApplicationContext(), "Option: " + previousName + ", now is: " + etEdition.getText().toString(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),this.getString(R.string.toast_editsubcat1)
+                    + previousName + this.getString(R.string.toast_editsubcat2)
+                    + etEdition.getText().toString(), Toast.LENGTH_SHORT).show();
         else
-            Toast.makeText(getApplicationContext(), "Not Updated", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), this.getString(R.string.toast_noteditsubcat) , Toast.LENGTH_SHORT).show();
         Intent intentMain = new Intent(this, MainActivity.class);
         intentMain.putExtra("Category", parentCategory);
         intentMain.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

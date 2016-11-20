@@ -16,14 +16,14 @@
         android:layout_marginTop="103dp"
         android:id="@+id/et_addSub"
         android:inputType="text"
-        android:hint="Insert item name"
+        android:hint="@string/ins_opt_name"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:textSize="@dimen/fontSizeSetView"
         android:textColor="?android:attr/colorForeground" />
 
     <Button
-        android:text="Add"
+        android:text="@string/button_ad_subcat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"

@@ -22,7 +22,7 @@
         android:layout_centerHorizontal="true" />
 
     <Button
-        android:text="Start Again"
+        android:text="@string/button_start_again"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/bu_rotate"
