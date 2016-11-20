@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#59ABE3"
+    android:padding="2pt">
+
+    <LinearLayout
+        android:id="@+id/llmain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/lvlistSub"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_weight="1"
+            android:background="#59ABE3"
+            android:dividerHeight="5dp"
+            android:footerDividersEnabled="true"
+            android:headerDividersEnabled="true" />
+
+    </LinearLayout>
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="bottom|end"
+        android:onClick="bu_OnAddSub"
+        android:tint="@android:color/background_light"
+        app:backgroundTint="@color/colorAccent"
+        app:borderWidth="2dp"
+        app:elevation="15dp"
+        app:fabSize="normal"
+        app:rippleColor="?android:attr/colorBackground"
+        app:srcCompat="@android:drawable/ic_menu_add"
+        app:useCompatPadding="true" />
+
+
+</RelativeLayout>
