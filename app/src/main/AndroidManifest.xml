@@ -1,29 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.hugolm.aleatorizadorapp">
-
-    <uses-feature android:name="android.hardware.sensor.accelerometer" />
-
-    <uses-permission android:name="android.permission.VIBRATE" />
+    package="com.hugolm.randomnizer">
+    <uses-feature android:name="android.hardware.Sensor.accelerometer" android:required="true"></uses-feature>
+    <uses-permission android:name="android.permission.VIBRATE"></uses-permission>
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        android:theme="@style/AppTheme.NoActionBar">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddCategory" />
         <activity android:name=".EditCategory" />
-        <activity android:name=".Subcategories" />
+        <activity android:name=".AddCategory" />
         <activity android:name=".AddSubcategory" />
-        <activity android:name=".EditSubcategory" />
+        <activity android:name=".EditSubcategory"></activity>
         <activity android:name=".Show_randomly_selected"></activity>
     </application>
 

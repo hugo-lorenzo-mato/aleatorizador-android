@@ -1,55 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_subcategories"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/bglist"
-    android:clickable="false"
-    android:orientation="horizontal"
     android:padding="3pt"
-    android:theme="@style/Theme.AppCompat.Light"
-    tools:context="com.hugolm.aleatorizadorapp.Subcategories">
+    android:clickable="false">
 
     <ImageButton
-        android:id="@+id/imageButtonDeleteSub"
         android:layout_width="26dp"
         android:layout_height="26dp"
+        app:srcCompat="@android:drawable/ic_menu_delete"
+        android:id="@+id/imageButtonDeleteSub"
         android:layout_gravity="center"
+        android:layout_weight="0"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="15dp"
-        android:layout_weight="0"
-        android:background="@drawable/bglist"
-        app:srcCompat="@android:drawable/ic_menu_delete" />
+        android:background="@drawable/bglist" />
 
 
     <ImageButton
-        android:id="@+id/imageButtonEditSub"
         android:layout_width="28dp"
         android:layout_height="26dp"
-        android:layout_gravity="center"
-        android:layout_weight="0"
+        app:srcCompat="@android:drawable/ic_menu_edit"
         android:background="#fff"
-        android:onClick="EditCategorySub"
-        app:srcCompat="@android:drawable/ic_menu_edit" />
+        android:layout_gravity="center"
+        android:id="@+id/imageButtonEditSub"
+        android:layout_weight="0"
+        android:onClick="EditCategory"/>
 
     <TextView
-        android:id="@+id/tvlayoutcategorySub"
+        android:text="TextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginBottom="12dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginTop="13dp"
-        android:layout_weight="1"
-        android:fadeScrollbars="true"
-        android:scrollbarSize="15dp"
-        android:scrollbarStyle="insideInset"
+        android:id="@+id/tvlayoutSubcategory"
         android:scrollbarTrackHorizontal="@android:color/holo_green_light"
-        android:text="TextView"
-        android:textAlignment="center"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Widget.ActionMode.Title" />
+        android:scrollbarStyle="insideInset"
+        android:scrollbarSize="15dp"
+        android:fadeScrollbars="true"
+        android:layout_marginTop="13dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginRight="50dp"
+        android:textColor="#000"
+        android:layout_weight="1"
+        android:layout_gravity="center_vertical"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Widget.ActionMode.Title"
+        android:textAlignment="center" />
 
 </LinearLayout>
