@@ -2,6 +2,7 @@ package com.hugolm.randomnizer;
 
 import android.app.Activity;
 import android.app.FragmentManager;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -46,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
     ListView myListViewSub;
     View headersub;
     View headercat;
+    int max;
+    int random;
     /* Para las subcategorias */
 
     String parentCategory;
@@ -457,9 +460,11 @@ public class MainActivity extends AppCompatActivity {
     private void showRandomOption() {
         Random selected = new Random();
         final int min = 0;
-        final int max = listDataSub.size();
+        try {
+            max = listDataSub.size() - 1;
+            random = selected.nextInt((max - min) + 1) + min;
+        } catch (Exception e){}
         System.out.println("Max: " + max);
-        final int random = selected.nextInt((max - min) + 1) + min;
         System.out.println("random = " + random);
         try {
             adapterOption = listDataSub.get(random);
