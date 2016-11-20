@@ -438,7 +438,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void showRandomOption(String message) {
+    private void showRandomOption() {
         Random selected = new Random();
         final int min = 0;
         final int max = listDataSub.size();
@@ -454,7 +454,7 @@ public class MainActivity extends AppCompatActivity {
         } catch (Exception e) {
             AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
             alertDialog.setTitle("Error: ");
-            alertDialog.setMessage(message);
+            alertDialog.setMessage("You should insert at least one option");
             alertDialog.setIcon(android.R.drawable.ic_dialog_alert);
             alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Ok", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
