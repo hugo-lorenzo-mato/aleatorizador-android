@@ -1,0 +1,68 @@
+﻿Documentación sprint5
+
+
+1. “principle of least astonishment”
+
+Este principio establece que cuando dos elementos de una interfaz entran en conflicto o son ambiguos, el comportamiento del programa ha de ser el que genere la mínima sorpresa por parte del usuario. En particular, un programador debería pensar en el comportamiento que menos sorprenda a quien use el programa en lugar del más natural para quien conozca el comportamiento interno del mismo.
+
+En nuestra aplicación hemos tratado de satisfacer con este principio desde un primer momento. Así, el botón flotante que se muestra en la esquina inferior derecha con un símbolo de más, no deja duda de que es para añadir nuevos elementos a la lista. Lo mismo ocurre con el icono-imagen tanto de la basura como el lápiz, quedando claras sus funciones: eliminar elemento y editarlo respectivamente.
+
+
+
+2. Documenta y corrige los casos en que la interface:
+
+	no gestiona los errores:
+En un primer momento, nuestra aplicación no gestionaba los siguientes errores: 
+1. Agitar el teléfono o tapar sensor de proximidad con lista de elementos vacía.
+2. Pulsar el botón de añadir subcategoría sin tener seleccionada una categoría concreta. Esta circunstancia se nos ha aparecido a la hora de trabajar con dos fragments en una misma pantalla. Mientras la aplicación no estaba adaptada para distintos dispositivos no se manifestó dado que no era posible mostrar subcategorías sin haber marcado una categoría previamente.
+Se ha subsanado con excepciones en el código e informando al usuario de la aplicación de la circunstancia que provoca la misma.
+
+	no proporciona feedback cuando es necesario:
+
+Relacionado con el siguiente punto, el programa no proporcionaba feedback cuando se añadía una nueva categoría/subcategoría, cuando se eliminaba un elemento, cuando se editaban; y del mismo modo cuando no se realizaban tales acciones por problemas derivados en su ejecución.
+Para evitar esta circunstancia se han añadido mensajes (Toasts y diálogos) para mantener el feedback con el usuario. Tras añadir una categoría, por ejemplo, ahora muestra un mensaje de si se ha añadido o no, y el nombre con el que se ha añadido. Igual para los casos en que se añade una subcategoría, mostrando en este último caso incluso a que categoría pertenece para mejorar el feedback.
+
+3. Android Human Interface Guidelines
+
+Sé breve: Utilice frases cortas con palabras simples. Las personas tienden a omitir las oraciones largas.
+
+Nuestra aplicación sigue claramente este principio: mensajes cortos y directos. Tanto en los casos en los que mostramos diálogos o “Toasts” informátivos al usuario, simplificamos la información al máximo.
+
+Las imágenes son más prácticas que las palabras: Considera la idea de utilizar imágenes para explicar las ideas. Las imágenes atraen la atención de las personas y pueden ser mucho más eficientes que las palabras.
+
+
+Hemos seguido esta pauta y en lugar de mostrar botones con texto para determinadas acciones o explicar determinadas funcionalidades, hemos optado por añadir imágenes. Así, tanto la imagen de la papelera, como el lápiz son explicativos por si mismos y hacen que los usuarios se familiaricen con la aplicación rápidamente.
+
+Siempre debo saber dónde me encuentro
+
+Hemos diseñado las partes de la aplicación de forma que los usuarios siempre sepan donde se encuentran. Así la sección de categorías muestra una cabecera que informa al usuario de la misma; y lo mismo ocurre con las subcategorías. 
+Este principio también se cumple diferenciando bien las distintas secciones: así la sección de editar o añadir elementos están claramente diferenciadas y no generan ningún tipo de dudas en el usuario sobre qué acción va a proceder.
+También se facilita el acceso a la anterior pantalla y a la pantalla de inicio. Es por ello que además del retroceso, se añade un botón de acceso al inicio de la aplicación cuando el usuario se encuentra dentro de la sección que muestra las subcategorías.
+Nunca pierdas lo que es mío
+
+Todos los datos del usuario son almacenados en una base de datos que asegura el correcto mantenimiento de la información. Aún en caso de actualización, estos datos se mantienen siempre que no sea incompatible con el desarrollo de una nueva versión.
+
+
+
+
+Solo interrúmpeme si es importante
+
+Principio que se cumple al pie de la letra: al usuario sólo se le interrumpe ante errores que no debe repetir para llevar a cabo la acción que desea.
+
+No es mi culpa
+
+Si el usuario lleva a cabo una acción no permitida que genera un error, se le informa para que pueda evitar el mismo. Se le brindan instrucciones clara de cómo proceder, evitando detalles técnicos de la causa. Es el caso de que el usuario trate de añadir una subcategoría sin haber marcado la categoría “madre”.
+Haz que lo importante sea rápido
+
+La aplicación tiene un objetivo claro que no es otro que el tomar decisiones de forma aleatoria entre varias opciones que añade el usuario. En nuestra app, en caso de tener las alternativas ya incluidas, el proceso de selección se resume a una pulsación para seleccionar la categoría y poner el móvil boca abajo o agitarlo para tener ya su elección mostrada en pantalla.
+Deléitame de formas sorprendentes
+
+Es el caso de la animación que se muestra a la hora de mostrar la opción seleccionada.
+Accesibilidad
+
+Dado que es una aplicación destinada a dispositivos móviles que en la actualidad se encuentran dominados por las pantallas táctiles, se facilita el uso de la aplicación con botones suficientemente separados para facilitar su uso y evitar pulsaciones equivocadas. El tamaño de letra se ha adoptado teniendo en cuenta una fácil lectura.
+Adaptación
+Se ha diseñado la aplicación de forma que se adapte a los distintos tamaños de los dispositivos y de igual forma a la orientación (vertical u horizontal). Para ello hemos optado por no diseñar los distintos elementos con medidas estáticas para un determinado dispositivo, sino que utilizamos medidas relativas en función del mismo. 
+Así, cuando la aplicación se lanza en una tablet, el tamaño de la letra es mayor que el que se muestra en un móvil. 
+Con los fragments también se consigue el máximo aprovechamiento de la pantalla. Así, mientras que en un móvil, poder ver las categorías y subcategorías dentro de una misma pantalla no es posible, sí lo es en las pantallas de mayor tamaño, aprovechando el espacio al máximo para ofrecer la máxima información posible, mejorando también la experiencia de uso.
+
