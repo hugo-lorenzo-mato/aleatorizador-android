@@ -438,18 +438,31 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void showRandomOption() {
+    private void showRandomOption(String message) {
         Random selected = new Random();
         final int min = 0;
         final int max = listDataSub.size();
         System.out.println("Max: " + max);
-        final int random = selected.nextInt((max - min) - 1) + min;
+        final int random = selected.nextInt((max - min) + 1) + min;
         System.out.println("random = " + random);
-        adapterOption = listDataSub.get(random);
-        Intent intentMain = new Intent(MainActivity.this, Show_randomly_selected.class);
-        intentMain.putExtra("winner", adapterOption.Category.toString());
-        intentMain.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intentMain);
+        try {
+            adapterOption = listDataSub.get(random);
+            Intent intentMain = new Intent(MainActivity.this, Show_randomly_selected.class);
+            intentMain.putExtra("winner", adapterOption.Category.toString());
+            intentMain.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intentMain);
+        } catch (Exception e) {
+            AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+            alertDialog.setTitle("Error: ");
+            alertDialog.setMessage(message);
+            alertDialog.setIcon(android.R.drawable.ic_dialog_alert);
+            alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Ok", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+            });
+            alertDialog.show();
+        }
 
     }
 
